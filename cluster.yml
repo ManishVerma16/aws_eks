@@ -1,0 +1,19 @@
+# Cluster file
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: ishvercluster
+  region: ap-south-1
+
+nodeGroups:
+  - name: ng1
+    instanceType: t2.micro
+    desiredCapacity: 1
+    ssh:
+      publicKeyName: secondkey
+  - name: ng2
+    instanceType: t2.micro
+    desiredCapacity: 1
+    ssh:
+      publicKeyName: secondkey
